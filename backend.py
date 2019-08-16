@@ -20,7 +20,6 @@ def Display(sso):
     con = sqlite3.connect('Database.db')
     cur = con.cursor()
     cur.execute(f'SELECT Employee_Name,GE_Sponser,GE_Business,L1_Genpact_MGr,L2_Genpact_MGr,L3_Genpact_MGr   FROM Data WHERE Contractor_SSO_ID = {sso}')
-    # data = pd.read_sql_query(f'SELECT Employee_Name FROM Data WHERE Contractor_SSO_ID = {sso}',con,index_col=None)
     rec = cur.fetchall()
     return rec
     
